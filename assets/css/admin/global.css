@@ -1,0 +1,115 @@
+.w-full {
+    width: 100%;
+}
+
+.dvu-flex {
+    display: flex;
+}
+.flex-1 {
+    flex: 1;
+}
+.w-1-12 {
+    width: 8.33%;
+}
+.w-2-12 {
+    width: 16.67%;
+}
+.w-3-12 {
+    width: 25%;
+}
+.w-4-12 {
+    width: 33.33%;
+}
+.w-5-12 {
+    width: 41.67%;
+}
+.w-6-12 {
+    width: 50%;
+}
+.w-7-12 {
+    width: 58.3%;
+}
+.w-8-12 {
+    width: 66.67%;
+}
+.w-9-12 {
+    width: 75%;
+}
+.w-10-12 {
+    width: 83.33%;
+}
+.w-11-12 {
+    width: 91.67%;
+}
+.w-12-12 {
+    width: 100%;
+}
+.dvu-flex-wrap {
+    flex-wrap: wrap;
+}
+.dvu-block {
+    display: block;
+}
+.dvu-inline-block {
+    display: inline-block;
+}
+.mx-1 {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+.mx-2 {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.mx-3 {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.-mx-1 {
+    margin-left: -4px;
+    margin-right: -4px;
+}
+.-mx-2 {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.-mx-3 {
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.px-1 {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.px-2 {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.px-3 {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.mb-1 {
+    margin-bottom: 4px;
+}
+.mb-2 {
+    margin-bottom: 8px;
+}
+.mb-3 {
+    margin-bottom: 12px;
+}
+
+.form-vertical {
+}
+
+.activity__agenda-item {
+    border: 1px solid #8c8f94;
+    padding: 12px 8px;
+    margin-bottom: 24px;
+}
+.activity__agenda-item-remove {
+    color: #b32d2e;
+    cursor: pointer;
+}

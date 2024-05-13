@@ -1,0 +1,21 @@
+/*===========wp-block-cover============*/
+.wp-block-cover__inner-container {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-block-image {
+}
+.aligncenter {
+    text-align: center;
+}
+.aligncenter img {
+    margin-left: auto;
+    margin-right: auto;
+}
+.wp-block-heading {
+}
+.has-text-align-center {
+    text-align: center;
+}
