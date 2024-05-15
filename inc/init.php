@@ -28,6 +28,12 @@ require get_template_directory() . '/inc/shortcodes/sc-popup-content.php';
 require get_template_directory() . '/inc/shortcodes/sc-report.php';
 require get_template_directory() . '/inc/shortcodes/sc-report-file.php';
 require get_template_directory() . '/inc/shortcodes/sc-report-gallery.php';
+require get_template_directory() . '/inc/shortcodes/sc-hero-content.php';
+require get_template_directory() . '/inc/shortcodes/sc-counter.php';
+require get_template_directory() . '/inc/shortcodes/sc-home-intro.php';
+require get_template_directory() . '/inc/shortcodes/sc-box-content.php';
+require get_template_directory() . '/inc/shortcodes/sc-box-cat.php';
+require get_template_directory() . '/inc/shortcodes/sc-hero-register.php';
 
 
 
