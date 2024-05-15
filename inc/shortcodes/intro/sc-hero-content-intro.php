@@ -11,7 +11,7 @@ function create_sc_intro_content_section($atts, $content = null)
 
     ob_start();
 
-    $theme_class = "hero bg-gradient-to-t py-6 lg:py-12 px-3 lg:px-0 relative overflow-hidden from-[#FF9C3D] via-[#F65E1D] to-[#F38620]";
+    $theme_class = "hero bg-gradient-to-t py-6 py-12 lg:py-24 px-3 lg:px-0 relative overflow-hidden from-[#FF9C3D] via-[#F65E1D] to-[#F38620]";
     $text_color = 'text-[#F65E1D]';
 
     if ($attr['color'] == 'blue') {
@@ -28,7 +28,7 @@ function create_sc_intro_content_section($atts, $content = null)
             <div class="mb-6 relative flex justify-center">
                 <span class=" border-solid border-t-[56px] border-r-[56px] border-b-[0px] border-l-[0px] border-t-transparent border-white inline-block -left-[56px] bottom-0 top-0"></span>
                 <div class="bg-white h-[56px] flex items-center justify-center flex-1">
-                    <p class="uppercase text-xl lg:text-2xl font-bold <?php echo $text_color; ?>"><?php echo $attr['highlight_text'] ?></p>
+                    <p class="uppercase text-lg leading-tight lg:text-2xl lg:leading-normal font-bold <?php echo $text_color; ?>"><?php echo $attr['highlight_text'] ?></p>
                 </div>
                 <span class=" border-solid border-t-[56px] border-l-[56px] border-b-[0px] border-r-[0px] border-t-transparent border-white inline-block -right-[56px] bottom-0 top-0"></span>
             </div>

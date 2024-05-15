@@ -80,7 +80,7 @@ add_action('wp_enqueue_scripts', 'dvutheme_register_script', 100);
 function dvutheme_widgets_init()
 {
 
-  $title_after = '<div class="is-divider small"></div>';
+  $title_after = '';
 
   register_sidebar(array(
     'name'          => __('Blog Sidebar', 'dvutheme'),
@@ -105,7 +105,15 @@ function dvutheme_widgets_init()
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<div class="widget-title">',
-    'after_title'   => '</div><div class="is-divider small"></div>',
+    'after_title'   => '</div>',
+  ));
+  register_sidebar(array(
+    'name'          => __('Footer 2', 'dvutheme'),
+    'id'            => 'sidebar-footer-2',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<div class="widget-title">',
+    'after_title'   => '</div>',
   ));
 }
 add_action('widgets_init', 'dvutheme_widgets_init');

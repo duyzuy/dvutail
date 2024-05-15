@@ -12,7 +12,7 @@ function create_sc_linhvuc_section($atts, $content = null)
     ob_start();
 ?>
     <div class="section__content">
-        <div class="container mx-auto py-12">
+        <div class="container mx-auto py-12 px-3 md:px-6 lg:px-8">
             <div class="section__content-head text-center uppercase mb-16 lg:mb-24">
                 <span class="block mb-2 text-xl lg:text-2xl font-bold text-gray-800"><?php echo $attr['sub_title'] ?></span>
                 <h3 class="bg-gradient-to-tr from-[#3B5AA7] via-[#3D85C5] to-[#3FA9DF] inline-block text-transparent bg-clip-text text-2xl lg:text-4xl uppercase font-bold"><?php echo $attr['title'] ?></h3>
@@ -51,7 +51,7 @@ function create_sc_box_icon($atts, $content = null)
             <div class="item__thumb">
                 <img src="<?php echo $attr['thumbnail'] ?>" class="block mx-auto italic" alt="<?php echo $attr['content'] ?>" />
             </div>
-            <div>
+            <div class="text-[12px] md:text-[13px] lg:text-[14px]">
                 <span><?php echo $attr['content'] ?></span>
             </div>
         </div>

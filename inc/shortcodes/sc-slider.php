@@ -44,7 +44,7 @@ function dvu_slider($atts)
                 if ($link) {
                     $output_slide .= '<a href="' . $link . '" target="_blank">';
                 }
-                $output_slide .= '<div class="slide-item__image"><img class="block italic"  src="' . $url . '" alt="' . $title . '"/></div>';
+                $output_slide .= '<div class="slide-item__image"><img class="block italic w-full"  src="' . $url . '" alt="' . $title . '"/></div>';
                 if ($link) {
                     $output_slide .=    '</a>';
                 }
