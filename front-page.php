@@ -98,7 +98,7 @@
 
 	<div class="register-section py-24 relative bg-[url(<?php echo get_template_directory_uri() . '/assets/images/bg-global-connect.png' ?>)]">
 		<div class=" bg-orange-600/80 absolute left-0 right-0 top-0 bottom-0 z-10"></div>
-		<div class="container mx-auto relative z-20 px-3 lg:px-0">
+		<div class="container mx-auto relative z-20 px-3 md:px-6 lg:px-8">
 			<div class="hero-content text-center max-w-2xl mx-auto text-white">
 				<div class="content mb-12">
 					<p class="text-3xl font-bold">ĐĂNG KÝ THAM DỰ</p>
@@ -110,43 +110,7 @@
 		</div>
 	</div>
 
-	<?php get_template_part('templates/partials/home/post', 'article', array(
-		'items'	=> array(
-			[
-				"title"	=>	"GIỚI THIỆU iTECH EXPO - HỒ CHÍ MINH 2024",
-				"thumbnail"	=>	get_template_directory_uri() . '/assets/images/posst-1.png',
-				'excerpt'	=>	'Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.',
-				"author"	=>	"Nguyen Van A",
-				"date"		=>	"18/04/2024",
-				"href"		=>	""
-			],
-			[
-				"title"	=>	"GIỚI THIỆU iTECH EXPO - HỒ CHÍ MINH 2024",
-				"thumbnail"	=>	get_template_directory_uri() . '/assets/images/posst-2.png',
-				'excerpt'	=>	'Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.',
-				"author"	=>	"Nguyen Van A",
-				"date"		=>	"18/04/2024",
-				"href"		=>	""
-			],
-			[
-				"title"	=>	"GIỚI THIỆU iTECH EXPO - HỒ CHÍ MINH 2024",
-				"thumbnail"	=>	get_template_directory_uri() . '/assets/images/posst-3.png',
-				'excerpt'	=>	'Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.',
-				"author"	=>	"Nguyen Van A",
-				"date"		=>	"18/04/2024",
-				"href"		=>	""
-			],
-			[
-				"title"	=>	"GIỚI THIỆU iTECH EXPO - HỒ CHÍ MINH 2024",
-				"thumbnail"	=>	get_template_directory_uri() . '/assets/images/posst-4.png',
-				'excerpt'	=>	'Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.',
-				"author"	=>	"Nguyen Van A",
-				"date"		=>	"18/04/2024",
-				"href"		=>	""
-			],
-		)
-	)) ?>
-
+	<?php echo do_shortcode('[dvu_blog limit="4" blog_title="Tin tức"]') ?>
 	<?php get_template_part('templates/partials/home/partner', '', array(
 		"title"	=> 	"bảo trợ - bảo an/bộ",
 		"sub_title"	=>	"đơn vị",
@@ -303,7 +267,6 @@
 		)
 	)) ?>
 
-</div>
 </div>
 
 <?php get_footer() ?>

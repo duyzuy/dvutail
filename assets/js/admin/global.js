@@ -128,7 +128,6 @@
     });
 
     jQuery(".btn-upload-banner").each(function () {
-        console.log(1);
         $(this).on("click", function (e) {
             e.preventDefault();
 
@@ -268,7 +267,7 @@
             </div>`;
     };
 
-    if (agendarContainer) {
+    if (agendarContainer.length) {
         const data = agendarContainer.attr("data-activity");
         let activityList = JSON.parse(data);
 
@@ -342,5 +341,133 @@
             $(".activity__agenda-container").empty();
             renderActivitylist(activityList);
         });
+    }
+
+    /*======== postpe=report======== */
+
+    const btnAddMoreFile = $(".js__btn-addmore-file");
+
+    const containerFormFile = $(".dvu__container-form-file-fields");
+
+    if (containerFormFile.length) {
+        let fileList = [];
+
+        const currentfileList = containerFormFile.attr("data-files");
+
+        if (currentfileList !== "" && currentfileList !== null) {
+            const files = JSON.parse(currentfileList);
+            fileList = [...fileList, ...files];
+        }
+
+        const newFileItem = { id: 0, name: "", size: "", url: "" };
+        const createTemplateUploadFile = (index, data) => {
+            const fileId = data["id"] || 0;
+            const fileName = data["name"] || "";
+            const fileUrl = data["url"] || "";
+            const fileSize = data["size"] || "";
+
+            return `<div class="dvu__file-item dvu-flex file-item mb-3" data-index="${index}">
+            <div class="w-2-12">
+                <label for="activity_date_start" class="dvu-block mb-2">File ${index}</label>
+            </div>
+            <div class="flex-1">
+                <div class="dvu-flex -mx-3 mb-3">
+                    <div class="flex-1 px-3">
+                        <input type="hidden" name="dvu_report_file[${index}][url]" class="w-full mb-3 dvu_report_file-url-${index}" value="${fileUrl}" placeholder="File url" />
+                        <input type="text" name="dvu_report_file[${index}][name]" class="w-full dvu_report_file-name" value="${fileName}" placeholder="File name"/>
+                        <input type="hidden" name="dvu_report_file[${index}][id]" class="w-full dvu_report_file-id-${index}" value="${fileId}" placeholder="File id" />
+                        <input type="hidden" name="dvu_report_file[${index}][size]" class="w-full dvu_report_file-id-${index}" value="${fileSize}" placeholder="File size" />
+                        <p class="dvu_report_file-url mt-0 mb-0">url: ${
+                            fileUrl || "--"
+                        }</p>
+                    </div>
+                    <div class="px-3">
+                        <button class="button js__btn-media-upload" data-index="${index}" type="button">Select file</button>
+                        <button class="button js__btn-media-delete" style="color: #b32d2e; border-color: #b32d2e" type="button">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+        };
+
+        $(document).on("click", ".js__btn-media-delete", function (e) {
+            e.preventDefault();
+            const indexItem = $(this)
+                .parents(".dvu__file-item")
+                .attr("data-index");
+            fileList.splice(indexItem, 1);
+            renderHtmlFileList();
+        });
+
+        containerFormFile.on("change", ".dvu_report_file-name", function (ev) {
+            const indexItem = $(this)
+                .parents(".dvu__file-item")
+                .attr("data-index");
+            fileList.splice(indexItem, 1, {
+                ...fileList[indexItem],
+                name: ev.target.value,
+            });
+        });
+
+        btnAddMoreFile.on("click", function (e) {
+            e.preventDefault();
+            fileList = [...fileList, newFileItem];
+            renderHtmlFileList();
+        });
+
+        jQuery(document).on("click", ".js__btn-media-upload", function (event) {
+            event.preventDefault();
+
+            const indexItem = $(this).data("index");
+
+            // Create the media frame.
+            file_frame = wp.media.frames.downloadable_file = wp.media({
+                title: "Choose an file",
+                button: {
+                    text: "Use file",
+                },
+                library: {
+                    order: "DESC",
+                    // [ 'name', 'author', 'date', 'title', 'modified', 'uploadedTo', 'id', 'post__in', 'menuOrder' ]
+                    orderby: "date",
+                    // mime type. e.g. 'image', 'image/jpeg'
+                    type: "application/pdf",
+
+                    // Searches the attachment title.
+                    search: null,
+                    uploader: {
+                        type: "application/pdf",
+                    },
+                    // Includes media only uploaded to the specified post (ID)
+                    // uploadedTo: null, // wp.media.view.settings.post.id (for current post ID)
+                },
+                multiple: false,
+            });
+            file_frame.open();
+            // When an image is selected, run a callback.
+            file_frame.on("select", function () {
+                var attachment = file_frame
+                    .state()
+                    .get("selection")
+                    .first()
+                    .toJSON();
+                fileList.splice(indexItem, 1, {
+                    ...fileList[indexItem],
+                    id: attachment.id,
+                    url: attachment.url,
+                    size: attachment.filesizeHumanReadable,
+                });
+                renderHtmlFileList();
+            });
+        });
+
+        const renderHtmlFileList = () => {
+            containerFormFile.html("");
+            fileList.forEach((file, _index) => {
+                const template = createTemplateUploadFile(_index, file);
+                containerFormFile.append(template);
+            });
+        };
+        renderHtmlFileList();
     }
 })(jQuery);

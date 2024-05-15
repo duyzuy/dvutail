@@ -22,7 +22,7 @@ $two_side_posts = new WP_Query($args_2posts);
 
 ?>
 <div class="archive__body py-12 lg:py-24">
-    <div class="container px-3 lg:px-0">
+    <div class="container mx-auto px-3 md:px-6 lg:px-8">
         <div class="newest__posts mb-12">
             <div class="text-center mb-6">
                 <h3 class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] inline-block text-transparent bg-clip-text text-2xl lg:text-4xl uppercase font-bold"> <?php echo esc_html__("News latest", "dvutheme") ?></h3>

@@ -13,8 +13,7 @@ get_header()
             <?php
             $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'full');
 
-            if (empty($thumbnail)) : ?>
-            <?php else : ?>
+            if (!empty($thumbnail)) : ?>
                 <header class="page-header bg-[url(<?php echo $thumbnail; ?>)] bg-center bg-cover md:h-[250px] lg:h-[350px] 2xl:h-[500px] flex items-center">
                     <div class="container mx-auto lg:py-6 px-0 md:px-6 lg:px-8">
                         <div class="flex items-center">
@@ -26,12 +25,12 @@ get_header()
                 </header>
             <?php endif; ?>
             <div class="page__wrapper-body relative">
-                <div class="container slider-container px-2 md:px-6 lg:px-8 py-6">
+                <div class="container mx-auto slider-container px-3 md:px-6 lg:px-8 py-6">
                     <?php echo do_shortcode('[dvu_slider slider_id="7"]') ?>
                 </div>
                 <div class="bg-[url(<?php echo get_template_directory_uri() . '/assets/images/global-left.svg' ?>)] w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] bg-cover absolute -right-[80px] xl:-right-[150px] top-[10%]"></div>
                 <div class="bg-[url(<?php echo get_template_directory_uri() . '/assets/images/global-right.svg' ?>)] w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] bg-cover absolute -left-[80px] xl:-left-[150px] top-[60%]"></div>
-                <div class="container px-2 md:px-6 lg:px-8 2xl:max-w-[1320px]">
+                <div class="container mx-auto px-2 md:px-6 lg:px-8 2xl:max-w-[1320px]">
                     <?php the_content() ?>
                 </div>
             </div>

@@ -24,6 +24,10 @@ require get_template_directory() . '/inc/shortcodes/sc-partner.php';
 require get_template_directory() . '/inc/shortcodes/sc-blog-post.php';
 require get_template_directory() . '/inc/shortcodes/sc-blog-post-list.php';
 require get_template_directory() . '/inc/shortcodes/sc-register-form.php';
+require get_template_directory() . '/inc/shortcodes/sc-popup-content.php';
+require get_template_directory() . '/inc/shortcodes/sc-report.php';
+require get_template_directory() . '/inc/shortcodes/sc-report-file.php';
+require get_template_directory() . '/inc/shortcodes/sc-report-gallery.php';
 
 
 
@@ -46,6 +50,7 @@ require get_template_directory() . '/inc/shortcodes/mobile/sc-banner-product-mob
 require get_template_directory() . '/inc/post-types/post-type-slider.php';
 require get_template_directory() . '/inc/post-types/post-type-speaker.php';
 require get_template_directory() . '/inc/post-types/post-type-activity.php';
+require get_template_directory() . '/inc/post-types/post-type-report.php';
 
 
 
@@ -54,3 +59,5 @@ require get_template_directory() . '/inc/post-types/post-type-activity.php';
 require get_template_directory() . '/inc/metaboxes/slider.php';
 require get_template_directory() . '/inc/metaboxes/activity-metabox.php';
 require get_template_directory() . '/inc/metaboxes/activity-host.php';
+require get_template_directory() . '/inc/metaboxes/report-file-metabox.php';
+require get_template_directory() . '/inc/metaboxes/report-gallery-metabox.php';

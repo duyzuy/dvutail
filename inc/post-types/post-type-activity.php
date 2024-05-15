@@ -22,7 +22,7 @@ function dvu_register_activity_post_type()
 
     $args = array(
         'labels'             => $labels,
-        'public'             => false,
+        'public'             => true,
         'publicly_queryable' => true,
         'show_ui'            => true,
         'show_in_menu'       => true,
@@ -103,7 +103,7 @@ function dv_register_activity_host()
 
         'labels'            => $labels,
         'public'            => true,
-        'show_in_nav_menus' => true,
+        'show_in_nav_menus' => false,
         'show_ui'           => true,
         'show_tagcloud'     => true,
         'rewrite'            => array('slug' => 'activity-host'),

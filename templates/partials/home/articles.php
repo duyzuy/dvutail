@@ -4,7 +4,7 @@ $items = isset($args['items']) ? $args['items'] : array();
 
 ?>
 <div class="categories py-24">
-    <div class="container mx-auto px-3 lg:px-0">
+    <div class="container mx-auto px-3 md:px-6 lg:px-8">
         <div class="flex flex-wrap -mx-3 gap-y-6">
             <?php foreach ($items as $key => $item) {
                 $classes =  $item['color'] === 'orange' ? "from-[#CC2027] via-[#D23125] via-[#E15723] via-[#EB7121] to-[#F48820]" : "from-[#3B5AA7] via-[#3B65AF] via-[#3D85C5] via-[#3D85C5] to-[#3FA9DF]";

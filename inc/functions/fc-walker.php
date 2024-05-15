@@ -70,7 +70,7 @@ class Dv_Nav_Walker extends Walker_Nav_Menu
         if ($item->is_dropdown && ($depth === 0)) {
             $item_output .= '<a' . $attributes . ' class="nav-link dropdown-button inline-flex items-center">';
         } else if ($depth === 1) {
-            $item_output .= '<a' . $attributes . ' class="nav-link px-3 py-2 hover:text-sky-700">';
+            $item_output .= '<a' . $attributes . ' class="nav-link px-3 py-2 hover:text-[#3B5AA7] border-l-[3px] border-l-transparent hover:border-l-[#3B5AA7] hover:drop-shadow">';
         } else {
             $item_output .= '<a' . $attributes . ' class="nav-link">';
         }
@@ -126,11 +126,6 @@ class Dv_Nav_Walker extends Walker_Nav_Menu
 }
 
 
-
-
-
-
-
 class Dv_Nav_Mobile_Walker extends Walker_Nav_Menu
 
 {
@@ -148,42 +143,80 @@ class Dv_Nav_Mobile_Walker extends Walker_Nav_Menu
 
     {
 
-        $output .= ($depth == 0) ? "\n<ul class=\"dv-top-ul-mb\">\n" : "\n<ul class=\"dv-sub-ul-mb dv-ul\">\n";
+        $output .= ($depth == 0) ? "\n<ul class=\"dv-top-ul-mb pl-2 ml-4 border-l\">\n" : "\n<ul class=\"dv-sub-ul-mb dv-ul\">\n";
     }
 
     public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
 
     {
 
-        $item_html = '';
 
-        parent::start_el($item_html, $item, $depth, $args);
+        global $wp_query;
 
-        if ($item->is_dropdown && ($depth === 0)) {
 
-            $item_html = str_replace('<a', '<a class="nav-top-link" data-activates="dv-top-ul" ', $item_html);
+        $indent = ($depth) ? str_repeat("\t", $depth) : '';
 
-            $item_html = str_replace('</a>', '</a> <span class="dvu-icon size-8 ms-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-</svg></span>', $item_html);
-        } elseif (stristr($item_html, 'li class="divider')) {
+        $class_names = "";
+        $value = '';
 
-            $item_html = preg_replace('/<a[^>]*>.*?<\/a>/iU', '', $item_html);
-        } elseif (stristr($item_html, 'li class="dropdown-header')) {
+        $classes = empty($item->classes) ? array() : (array) $item->classes;
 
-            $item_html = preg_replace('/<a[^>]*>(.*)<\/a>/iU', '$1', $item_html);
-        } elseif ($item->is_dropdown && ($depth >= 0)) {
+        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item));
 
-            $item_html = str_replace('<a', '<a class="nav-sub-link" style="font-weight: bold" ', $item_html);
+        preg_match("/icsgsv[^\s]*|icsgsv/", $class_names, $icons);
 
-            $item_html = str_replace('</a>', '</a>', $item_html);
+
+        $class_names = preg_replace("/icsgsv[^\s]*|icsgsv/", "", $class_names);
+
+        $class_names = ' class="' . esc_attr($class_names) . " relative" . '"';
+
+        $output .= $indent . '<li' . $value . $class_names . '>';
+
+        $attributes  = !empty($item->attr_title) ? ' title="'  . esc_attr($item->attr_title) . '"' : '';
+        $attributes .= !empty($item->target)     ? ' target="' . esc_attr($item->target) . '"' : '';
+        $attributes .= !empty($item->xfn)        ? ' rel="'    . esc_attr($item->xfn) . '"' : '';
+        $attributes .= !empty($item->url)        ? ' href="'   . esc_attr($item->url) . '"' : '';
+
+        if ($icons) {
+            $prepend = '<i class="icsgsv ' . $icons[0] . '"/></i>';
+        } else {
+            $prepend = '';
         }
 
 
+        $append = '';
+        $description  = !empty($item->description) ? '<span class="nav-menu-description">' . esc_attr($item->description) . '</span>' : '';
 
-        $item_html = apply_filters('roots_wp_nav_menu_item', $item_html);
+        if ($depth != 0) {
+            $description = $append = $prepend = "";
+        }
 
-        $output .= $item_html;
+        $item_output = $args->before;
+        if ($item->is_dropdown && ($depth === 0)) {
+            $item_output .= '<a' . $attributes . ' class="nav-link dropdown-button flex items-center py-3 px-4 justify-between">';
+        } else if ($depth === 1) {
+            $item_output .= '<a' . $attributes . ' class="nav-link block py-3 px-4">';
+        } else {
+            $item_output .= '<a' . $attributes . ' class="nav-link block py-3 px-4">';
+        }
+        $item_output .= $args->link_before . $prepend . apply_filters('the_title', $item->title, $item->ID) . $append;
+        $item_output .= $description . $args->link_after;
+
+        if ($item->is_dropdown && ($depth >= 0)) {
+            $item_output .= '<span class="dvu-icon ml-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-[12px]" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+          </svg></span></a>';
+        } else {
+            $item_output .= '</a>';
+        }
+        $item_output .= '</a>';
+        $item_output .= $args->after;
+
+
+        $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+        if ($item->menu_order == 1) {
+            $classes[] = 'first';
+        }
     }
 
     public function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output)
