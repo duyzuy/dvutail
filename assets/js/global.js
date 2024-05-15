@@ -167,6 +167,15 @@
         // centerMode: true,
     });
 
+    $(".js__btn-primary-menu-mobile").on("click", function () {
+        $("body").css({ overflow: "hidden" });
+        $(".primary__mobile__menu").addClass("show");
+    });
+    $(".js__close-menu-mobile").on("click", function () {
+        $("body").removeAttr("style");
+        $(".primary__mobile__menu").removeClass("show");
+    });
+
     /**shortcode popup content */
 
     $(".article__report-tab-panel").on(

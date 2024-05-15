@@ -102,6 +102,7 @@ get_header()
                 </div>
             </div>
         </div>
+
         <div class="section__content py-12 lg:py-24">
             <div class="container mx-auto px-3 md:px-6 lg:px-8">
                 <div class="section__content-head text-center uppercase mb-16 lg:mb-24">
@@ -225,9 +226,7 @@ get_header()
                                     <img src="<?php echo get_template_directory_uri() . "/assets/images/intro/icon-e-commerce.svg" ?>" class="block mx-auto italic" alt="AI" />
                                 </div>
                                 <div>
-                                    <span>Smart Retail,
-                                        E-Commerce,
-                                        Digital Marketing</span>
+                                    <span>Smart Retail, E-Commerce, Digital Marketing</span>
                                 </div>
                             </div>
                         </div>
@@ -375,7 +374,6 @@ get_header()
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="hero bg-gradient-to-t py-6 lg:py-12 px-3 lg:px-0 relative overflow-hidden from-[#FF9C3D] via-[#F65E1D] to-[#F38620]">

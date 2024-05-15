@@ -34,6 +34,15 @@ require get_template_directory() . '/inc/shortcodes/sc-home-intro.php';
 require get_template_directory() . '/inc/shortcodes/sc-box-content.php';
 require get_template_directory() . '/inc/shortcodes/sc-box-cat.php';
 require get_template_directory() . '/inc/shortcodes/sc-hero-register.php';
+require get_template_directory() . '/inc/shortcodes/sc-pdf-file.php';
+require get_template_directory() . '/inc/shortcodes/intro/sc-hero-content.php';
+require get_template_directory() . '/inc/shortcodes/intro/sc-slogan.php';
+require get_template_directory() . '/inc/shortcodes/intro/sc-hero-content-intro.php';
+require get_template_directory() . '/inc/shortcodes/intro/sc-box-su-menh.php';
+require get_template_directory() . '/inc/shortcodes/intro/sc-box-cot-loi.php';
+require get_template_directory() . '/inc/shortcodes/intro/sc-box-mang-luoi.php';
+require get_template_directory() . '/inc/shortcodes/intro/sc-box-linh-vuc.php';
+
 
 
 
