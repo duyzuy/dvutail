@@ -1,7 +1,7 @@
 <?php
 
 /*
-* Template Name: page contact
+* Template Name: page contact template
 *
 *
 */
@@ -34,8 +34,9 @@ get_header() ?>
             <div class="page__wrapper-body relative">
                 <div class="bg-[url(<?php echo get_template_directory_uri() . '/assets/images/global-left.svg' ?>)] w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] bg-cover absolute -right-[80px] xl:-right-[150px] top-[10%]"></div>
                 <div class="bg-[url(<?php echo get_template_directory_uri() . '/assets/images/global-right.svg' ?>)] w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] bg-cover absolute -left-[80px] xl:-left-[150px] top-[60%]"></div>
-                <div class="container px-3 md:px-6 lg:px-8 relative z-10">
+                <div class="container px-3 md:px-6 mx-auto lg:px-8 relative z-10">
                     <?php the_content() ?>
+                    <?php /*
                     <div class="content py-12 text-center">
                         <span class="bg-gradient-to-r bg-clip-text from-orange-600 to-orange-400 uppercase text-transparent font-bold text-xl lg:text-3xl">SKY EXPO</span>
                         <p><strong>Địa chỉ:</strong> Công Viên Phần Mềm Quang Trung, Đ. Số 1, Tân Hưng Thuận, Quận 12, Thành phố Hồ Chí Minh</p>
@@ -232,11 +233,11 @@ get_header() ?>
                             </div>
                         </div>
                     </div>
+                    */ ?>
                 </div>
             </div>
 
         <?php endwhile; ?>
-
     </div>
 </main>
 <?php get_footer() ?>
