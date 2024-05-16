@@ -239,6 +239,10 @@
         const startDate = self.find('input[name="date_start"]');
         const endDate = self.find('input[name="date_end"]');
 
+        const term_name = self.find('input[name="term_name"]');
+        const termId = self.find('input[name="term_id"]');
+        const taxonomy = self.find('input[name="taxonomy"]');
+
         const activityListContainer = $(".activity__list-container");
 
         const submitbtn = self.find('button[type="submit"]');
@@ -254,6 +258,8 @@
                 onsite: onsite.is(":checked"),
                 offsite: offsite.is(":checked"),
                 beforeEv: beforeEv.is(":checked"),
+                term_id: termId.val(),
+                taxonomy: taxonomy.val(),
                 inEv: inEv.is(":checked"),
                 afterEv: afterEv.is(":checked"),
                 startDate: startDate.val(),

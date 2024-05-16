@@ -57,6 +57,8 @@ function dvu_filter_activity_post()
     $inEv = $_POST['inEv'];
     $afterEv = $_POST['afterEv'];
     $startDate = $_POST['startDate'];
+    $term_id = $_POST['term_id'];
+    $taxonomy = $_POST['taxonomy'];
     $endDate = $_POST['endDate'];
 
     $args = array(
@@ -64,6 +66,13 @@ function dvu_filter_activity_post()
         'posts_per_page' => -1,
         'orderby' => 'date', // newest
         'order' => 'DESC', //to the top
+        'tax_query' => array(
+            array(
+                'taxonomy' => $taxonomy,   // taxonomy name
+                'field' => 'term_id',           // term_id, slug or name
+                'terms' => $term_id,                  // term id, term slug or term name
+            )
+        )
 
     );
 

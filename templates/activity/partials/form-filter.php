@@ -1,11 +1,18 @@
 <?php
-$class = $args['class']
+$class = $args['class'];
+$term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 
 ?>
 <div class="search-from <?php echo $class ?>">
     <div class="form px-8 py-6 shadow-lg mb-12 rounded-lg bg-white">
-        <div class="text-2xl font-[500] mb-6">Lọc hoạt động</div>
+        <div class="text-2xl font-[500] mb-6"><?php echo esc_html(sprintf(
+                                                    __('Filter %s', 'dvutheme'),
+                                                    $term->name
+                                                )) ?></div>
         <form id="activity_post_search_form" method="POST" class="">
+            <input hidden name="term_name" value="<?php echo $term->name; ?>" />
+            <input hidden name="term_id" value="<?php echo $term->term_id; ?>" />
+            <input hidden name="taxonomy" value="<?php echo $term->taxonomy; ?>" />
             <div class="flex flex-wrap -mx-3 gap-y-6">
                 <div class="item px-3">
                     <legend class="mb-3 font-[500] block"><?php esc_html_e("Localtion", 'dvutheme') ?></legend>
@@ -49,7 +56,7 @@ $class = $args['class']
                     </div>
                 </div>
                 <div class="content-end px-3">
-                    <button class="text-white h-10 w-full items-center bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] font-bold px-6 py-2 js_search_activity" type="submit">Tim kiem</button>
+                    <button class="text-white h-10 w-full items-center bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] font-bold px-6 py-2 js_search_activity" type="submit"><?php esc_html_e("Seach", 'dvutheme') ?></button>
                 </div>
             </div>
         </form>
