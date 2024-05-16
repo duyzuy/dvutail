@@ -36,6 +36,7 @@ function dvu_callback_activity_fields($post)
     $time_end = isset($data['time_end']) ? $data['time_end'] : "";
     $location_type = isset($data['location_type']) ? $data['location_type'] : "";
     $address = isset($data['address']) ? $data['address'] : "";
+    $registration_link = isset($data['link']) ? $data['link'] : "";
     $timming = isset($data['timming']) ? $data['timming'] : "";
     $speaker_ids  = isset($data['speaker']) ? $data['speaker'] : array();
     $agenda_list  = isset($data['activity_agenda']) ? $data['activity_agenda'] : array();
@@ -84,6 +85,14 @@ function dvu_callback_activity_fields($post)
         </div>
         <div class="flex-1">
             <input type="text" id="activity_location_address" placeholder="Address" name="dvu_activity[address]" class="w-full" value="<?php esc_html_e($address) ?>" />
+        </div>
+    </div>
+    <div class="dvu-flex mb-3">
+        <div class="w-2-12">
+            <label for="activity_registration_link" class="dvu-block mb-2"><?php esc_html_e("Registration link", "dvutheme") ?></label>
+        </div>
+        <div class="flex-1">
+            <input type="text" id="activity_registration_link" placeholder="Registration link" name="dvu_activity[link]" class="w-full" value="<?php esc_html_e($registration_link) ?>" />
         </div>
     </div>
 

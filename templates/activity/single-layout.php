@@ -15,6 +15,7 @@ $address = isset($data['address']) ? $data['address'] : "";
 $timming = isset($data['timming']) ? $data['timming'] : "";
 $speaker_ids = isset($data['speaker']) ? $data['speaker'] : array();
 $agenda_list  = isset($data['activity_agenda']) ? $data['activity_agenda'] : array();
+$registration_link  = isset($data['link']) ? $data['link'] : array();
 
 
 ?>
@@ -29,7 +30,7 @@ $agenda_list  = isset($data['activity_agenda']) ? $data['activity_agenda'] : arr
                     <h1 class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] inline-block text-transparent bg-clip-text text-2xl lg:text-4xl font-bold"><?php the_title() ?></h1>
                 </div>
                 <div class="w-full lg:w-2/6 text-center">
-                    <a href="" class="text-center text-white bg-gradient-to-r from-[#E15723] via-[#EB7121] to-[#F48820] px-8 py-3 rounded-full font-[500] inline-block text-lg lg:text-xl uppercase"><?php esc_html_e("Đăng ký ngay", 'dvutheme') ?> </a>
+                    <a href="<?php echo $registration_link; ?>" target="_blank" rel="nofollow" class="text-center text-white bg-gradient-to-r from-[#E15723] via-[#EB7121] to-[#F48820] px-8 py-3 rounded-full font-[500] inline-block text-lg lg:text-xl uppercase"><?php esc_html_e("Đăng ký ngay", 'dvutheme') ?> </a>
                 </div>
             </div>
         </div>

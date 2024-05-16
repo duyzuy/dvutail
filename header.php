@@ -5,8 +5,7 @@
     <meta charset="<?php bloginfo('charset'); ?>" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="#bf1e2e">
-    <title><?php wp_title(); ?></title>
+    <meta name="theme-color" content="#F48820">
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="manifest" href="<?php echo get_template_directory_uri() ?>/assets/js/manifest.json">
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/assets/icon/itech-192x192.png">
