@@ -94,7 +94,7 @@ $two_side_posts = new WP_Query($args_2posts);
             </div>
         </div>
         <div class="text-center mb-6">
-            <h3 class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] inline-block text-transparent bg-clip-text text-2xl lg:text-4xl uppercase font-bold"> <?php echo esc_html__("News", "dvutheme") ?></h3>
+            <h3 class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] inline-block text-transparent bg-clip-text text-2xl lg:text-4xl uppercase font-bold"> <?php esc_html_e("News", "dvutheme") ?></h3>
         </div>
         <?php if (have_posts()) : ?>
             <div class="flex flex-wrap -mx-3">
@@ -107,7 +107,7 @@ $two_side_posts = new WP_Query($args_2posts);
                             <div class="box__search-form">
                                 <form>
                                     <div class="w-full mb-4">
-                                        <label for="country" class="hidden text-sm font-medium leading-6 text-gray-900">Search</label>
+                                        <label for="country" class="hidden text-sm font-medium leading-6 text-gray-900"><?php esc_html_e("Search news", 'dvutheme') ?></label>
                                         <div class="flex rounded-[4px] h-[40px] shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-orange-500">
                                             <input type="text" name="search_post" autocomplete="searchpost" class="block flex-1 border-0 bg-transparent py-2 pl-4 text-gray-900 placeholder:text-gray-400 focus:ring-0 focus-visible:ring-0 focus:outline-0 focus-visible:outline-none focus-within:ring-0 sm:text-sm sm:leading-6" placeholder="<?php esc_html_e("Search", "dvutheme") ?>">
                                             <span class="flex select-none items-center pr-4 text-gray-500 sm:text-sm">

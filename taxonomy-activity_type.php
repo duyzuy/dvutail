@@ -6,7 +6,6 @@
                         <?php get_template_part('/templates/activity/layout'); ?>
                 </div><!--#main-content-->
 
-
         </div><!--#main-content-->
 </main>
 

@@ -19,11 +19,11 @@ $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
                     <div class="flex items-center -mx-1">
                         <div class="checkbox-control px-1">
                             <input type="checkbox" id="activity-onsite" name="onsite" class="hidden" checked />
-                            <label for="activity-onsite" class="border rounded-full px-4 py-2 block cursor-pointer h-10">Onsite</label>
+                            <label for="activity-onsite" class="border rounded-full px-4 py-2 block cursor-pointer h-10"><?php esc_html_e("Onsite", 'dvutheme') ?></label>
                         </div>
                         <div class="checkbox-control px-1">
                             <input type="checkbox" id="activity-offsite" name="offsite" class="hidden" />
-                            <label for="activity-offsite" class="border rounded-full px-4 py-2 block cursor-pointer h-10">Offsite</label>
+                            <label for="activity-offsite" class="border rounded-full px-4 py-2 block cursor-pointer h-10"><?php esc_html_e("Offsite", 'dvutheme') ?></label>
                         </div>
                     </div>
                 </div>
