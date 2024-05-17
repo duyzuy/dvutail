@@ -12,7 +12,7 @@ function dvu_shortcode_slider_parter($atts, $content)
 ?>
     <div class="partner__section py-12">
         <div class="container mx-auto px-3 md:px-6 lg:px-8">
-            <div class="partner__section-head text-center uppercase mb-6 lg:mb-12">
+            <div class="partner__section-head text-center uppercase mb-6 lg:mb-12 font-[Monsterat]">
                 <span class="block mb-2 text-xl lg:text-2xl font-bold"><?php echo $attr['sub_title'] ?></span>
                 <h3 class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] inline-block text-transparent bg-clip-text text-2xl lg:text-4xl uppercase font-bold"><?php echo $attr['title']; ?></h3>
             </div>

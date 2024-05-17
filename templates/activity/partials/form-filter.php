@@ -5,10 +5,12 @@ $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 ?>
 <div class="search-from <?php echo $class ?>">
     <div class="form px-8 py-6 shadow-lg mb-12 rounded-lg bg-white">
-        <div class="text-2xl font-[500] mb-6"><?php echo esc_html(sprintf(
-                                                    __('Filter %s', 'dvutheme'),
-                                                    $term->name
-                                                )) ?></div>
+        <div class="text-2xl font-[500] mb-6 font-[Monsterat]">
+            <?php echo esc_html(sprintf(
+                __('Filter %s', 'dvutheme'),
+                $term->name
+            )) ?>
+        </div>
         <form id="activity_post_search_form" method="POST" class="">
             <input hidden name="term_name" value="<?php echo $term->name; ?>" />
             <input hidden name="term_id" value="<?php echo $term->term_id; ?>" />

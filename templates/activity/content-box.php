@@ -33,7 +33,7 @@ $year = date('Y', strtotime($date_start));
 
 <article class="w-full border-b pb-6 mb-6">
     <div class="inner flex flex-wrap lg:items-center">
-        <div class="activity-date lg:w-60 w-40 lg:pr-8 pr-3">
+        <div class="activity-date lg:w-60 w-40 lg:pr-8 pr-3 font-[Monsterat]">
             <span class="inline-flex items-center bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] text-transparent bg-clip-text uppercase font-bold">
                 <span class="lg:text-6xl text-4xl">
                     <?php echo $day; ?>
@@ -61,7 +61,7 @@ $year = date('Y', strtotime($date_start));
             <!--end-box-image-->
             <div class="activity-content w-full lg:w-3/4">
                 <div class="header-box">
-                    <h3 class="">
+                    <h3 class="font-[Monsterat]">
                         <a href="<?php the_permalink(); ?>" class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] text-transparent bg-clip-text uppercase font-bold text-xl lg:text-2xl mb-3" alt="<?php the_title() ?>"><?php the_title(); ?> </a>
                     </h3>
                     <div class="mb-3 line-clamp-3">

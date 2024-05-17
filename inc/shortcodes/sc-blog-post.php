@@ -31,7 +31,7 @@ function sc_section_blog_post($atts)
     <section class="dvu__blog <?php echo $attr['class'] ?>">
         <div class="container mx-auto px-3 md:px-6 lg:px-8">
             <div class="dvu__blog-title mb-12 text-center">
-                <h3 class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] inline-block text-transparent bg-clip-text text-3xl lg:text-5xl uppercase font-bold"><?php echo $attr['blog_title'] ?></h3>
+                <h3 class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] inline-block text-transparent bg-clip-text text-3xl lg:text-5xl uppercase font-bold font-[Monsterat]"><?php echo $attr['blog_title'] ?></h3>
             </div>
             <div class="dvu__blog-body">
                 <div>

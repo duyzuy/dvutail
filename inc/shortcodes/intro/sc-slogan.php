@@ -16,7 +16,7 @@ function create_sc_slogan_shortcode($atts, $content = null)
 ?>
     <div class="slogan">
         <div class="container mx-auto px-3 md:px-6 lg:px-8 py-12">
-            <div class="flex items-center justify-center flex-wrap">
+            <div class="flex items-center justify-center flex-wrap font-[Monsterat]">
                 <div class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] text-transparent bg-clip-text font-bold text-4xl md:text-5xl md:leading-[3.5rem]">
                     <span class="block"><?php echo $attr['text_1'] ?></span>
                     <span class="block"><?php echo $attr['text_2'] ?></span>

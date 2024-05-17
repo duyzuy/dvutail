@@ -17,6 +17,27 @@ $speaker_ids = isset($data['speaker']) ? $data['speaker'] : array();
 $agenda_list  = isset($data['activity_agenda']) ? $data['activity_agenda'] : array();
 $registration_link  = isset($data['link']) ? $data['link'] : array();
 
+$location_type_label = "";
+if ($location_type == 'onsite') {
+    $location_type_label = esc_html__("Onsite", 'dvutheme');
+}
+if ($location_type == 'offsite') {
+    $location_type_label = esc_html__("Offsite", 'dvutheme');
+}
+
+$timming_text = '';
+
+if ($timming == 'before_event') {
+    $timming_text = esc_html__("Before event", 'dvutheme');
+}
+if ($timming == 'in_event') {
+    $timming_text = esc_html__("In event", 'dvutheme');
+}
+
+if ($timming == 'after_event') {
+    $timming_text = esc_html__("After event", 'dvutheme');
+}
+
 
 ?>
 <div class="activity__layout">
@@ -26,7 +47,7 @@ $registration_link  = isset($data['link']) ? $data['link'] : array();
     <div class="activity__layout-content mx-auto container px-3 md:px-6 lg:px-8 py-12 xl:max-w-7xl">
         <div class="activity__layout-head mb-12">
             <div class="flex items-center flex-wrap gap-y-6">
-                <div class="title w-full lg:w-4/6 lg:pr-12">
+                <div class="title w-full lg:w-4/6 lg:pr-12 font-[Monsterat]">
                     <h1 class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] inline-block text-transparent bg-clip-text text-2xl lg:text-4xl font-bold"><?php the_title() ?></h1>
                 </div>
                 <div class="w-full lg:w-2/6 text-center">
@@ -113,7 +134,7 @@ $registration_link  = isset($data['link']) ? $data['link'] : array();
                                 </svg></span>
 
                             <div>
-                                <p class="mb-2"><span class="text-transparent bg-clip-text text-lg bg-gradient-to-tr from-[#3B5AA7] via-[#3B65AF] to-[#3FA9DF] font-[500]"><?php esc_html_e("Date", 'dvutheme') ?></span></p>
+                                <p class="mb-2"><span class="text-transparent bg-clip-text text-lg bg-gradient-to-tr from-[#3B5AA7] via-[#3B65AF] to-[#3FA9DF] font-[500] font-[Monsterat]"><?php esc_html_e("Date", 'dvutheme') ?></span></p>
                                 <div>
                                     <p><?php echo "{$date_start} {$time_start} - {$time_end}" ?></p>
                                 </div>
@@ -146,7 +167,7 @@ $registration_link  = isset($data['link']) ? $data['link'] : array();
                                 </svg>
                             </span>
                             <div>
-                                <p class="mb-2"><span class="text-transparent bg-clip-text text-lg bg-gradient-to-tr from-[#3B5AA7] via-[#3B65AF] to-[#3FA9DF] font-[500]"><?php esc_html_e("Address", 'dvutheme') ?></span></p>
+                                <p class="mb-2"><span class="text-transparent bg-clip-text text-lg bg-gradient-to-tr from-[#3B5AA7] via-[#3B65AF] to-[#3FA9DF] font-[500] font-[Monsterat]"><?php esc_html_e("Address", 'dvutheme') ?></span></p>
                                 <div>
                                     <p><?php echo $address; ?></p>
                                 </div>
@@ -186,7 +207,7 @@ $registration_link  = isset($data['link']) ? $data['link'] : array();
                                 </svg>
                             </span>
                             <div>
-                                <p class="mb-2"><span class="text-transparent bg-clip-text text-lg bg-gradient-to-tr from-[#3B5AA7] via-[#3B65AF] to-[#3FA9DF] font-[500]"><?php esc_html_e("Host", 'dvutheme') ?></span></p>
+                                <p class="mb-2"><span class="text-transparent bg-clip-text text-lg bg-gradient-to-tr from-[#3B5AA7] via-[#3B65AF] to-[#3FA9DF] font-[500] font-[Monsterat]"><?php esc_html_e("Host", 'dvutheme') ?></span></p>
                                 <div class="mt-2"><?php activity_single_hosts() ?></div>
                             </div>
 
@@ -218,8 +239,8 @@ $registration_link  = isset($data['link']) ? $data['link'] : array();
                                 </svg>
                             </span>
                             <div>
-                                <p class="mb-2"><span class="text-transparent bg-clip-text text-lg bg-gradient-to-tr from-[#3B5AA7] via-[#3B65AF] to-[#3FA9DF] font-[500]"><?php esc_html_e("Tag", 'dvutheme') ?></span></p>
-                                <p class="pl"><?php echo "{$location_type}, {$timming}"; ?></p>
+                                <p class="mb-2"><span class="text-transparent bg-clip-text text-lg bg-gradient-to-tr from-[#3B5AA7] via-[#3B65AF] to-[#3FA9DF] font-[500] font-[Monsterat]"><?php esc_html_e("Tag", 'dvutheme') ?></span></p>
+                                <p class="pl"><?php echo "{$location_type_label}, {$timming_text}"; ?></p>
                             </div>
                         </div>
                     </div>
@@ -228,16 +249,16 @@ $registration_link  = isset($data['link']) ? $data['link'] : array();
                     <?php the_content() ?>
                 </div>
             </div>
-            <div class="sepakers">
+            <div class="sepakers font-[Monsterat]">
                 <div class="sepakers__head mb-6">
-                    <h3 class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] inline-block text-transparent bg-clip-text text-2xl lg:text-4xl font-bold uppercase"><?php esc_html_e("Speakers", "dvutheme") ?></h3>
+                    <h3 class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] inline-block text-transparent bg-clip-text text-2xl lg:text-4xl font-bold uppercase font-[Monsterat]"><?php esc_html_e("Speakers", "dvutheme") ?></h3>
                 </div>
                 <?php dvu_get_speakers($speaker_ids) ?>
             </div>
         </div>
-        <div class="pt-6">
+        <div class="agenda pt-6 font-[Monsterat]">
             <div class="sepakers__head mb-6">
-                <h3 class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] inline-block text-transparent bg-clip-text text-2xl lg:text-4xl font-bold uppercase"><?php esc_html_e("Agenda", "dvutheme") ?></h3>
+                <h3 class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] inline-block text-transparent bg-clip-text text-2xl lg:text-4xl font-bold uppercase font-[Monsterat]"><?php esc_html_e("Agenda", "dvutheme") ?></h3>
             </div>
             <?php
             $last = count($agenda_list) - 1;

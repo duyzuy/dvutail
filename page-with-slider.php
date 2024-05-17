@@ -14,7 +14,7 @@ get_header()
             $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'full');
 
             if (!empty($thumbnail)) : ?>
-                <header class="page-header bg-[url(<?php echo $thumbnail; ?>)] bg-center bg-cover md:h-[250px] lg:h-[350px] 2xl:h-[500px] flex items-center">
+                <header class="page-header bg-[url(<?php echo $thumbnail; ?>)] bg-center bg-cover md:h-[250px] lg:h-[350px] 2xl:h-[500px] flex items-center font-[Monsterat]">
                     <div class="container mx-auto lg:py-6 px-0 md:px-6 lg:px-8">
                         <div class="flex items-center">
                             <div class="page__title bg-gradient-to-r from-[#CC2027]/80 via-[#E15723]/80 to-transparent pl-4 pr-16 py-6 md:py-3 lg:pl-12 lg:py-8 lg:pr-16 xl:pl-12 xl:py-8 2xl:pr-24 w-fit uppercase">

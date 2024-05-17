@@ -24,9 +24,9 @@ function create_sc_intro_content_section($atts, $content = null)
         <div class="pattern absolute w-[18vw] h-[18vw] -top-[6vw] -right-[6vw] bg-no-repeat bg-cover bg-[url(<?php echo get_template_directory_uri() . '/assets/images/pattern-tr.svg' ?>)]"></div>
         <div class="pattern absolute w-[18vw] h-[18vw] -bottom-[6vw] -left-[6vw] bg-no-repeat bg-cover bg-[url(<?php echo get_template_directory_uri() . '/assets/images/pattern-bl.svg' ?>)]"></div>
         <div class="container mx-auto px-3 md:px-6 lg:px-8 text-white mb-3 text-center max-w-5xl">
-            <p class="font-bold text-xl lg:text-4xl mb-3 lg:mb-6"><?php echo $attr['title'] ?></p>
-            <div class="mb-6 relative flex justify-center">
-                <span class=" border-solid border-t-[56px] border-r-[56px] border-b-[0px] border-l-[0px] border-t-transparent border-white inline-block -left-[56px] bottom-0 top-0"></span>
+            <p class="font-bold text-xl lg:text-4xl mb-3 lg:mb-6 font-[Monsterat]"><?php echo $attr['title'] ?></p>
+            <div class="mb-6 relative flex justify-center font-[Monsterat]">
+                <span class="border-solid border-t-[56px] border-r-[56px] border-b-[0px] border-l-[0px] border-t-transparent border-white inline-block -left-[56px] bottom-0 top-0"></span>
                 <div class="bg-white h-[56px] flex items-center justify-center flex-1">
                     <p class="uppercase text-lg leading-tight lg:text-2xl lg:leading-normal font-bold <?php echo $text_color; ?>"><?php echo $attr['highlight_text'] ?></p>
                 </div>

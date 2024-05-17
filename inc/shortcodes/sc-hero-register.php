@@ -25,11 +25,11 @@ function create_sc_hero_register($atts, $content)
         <div class="container mx-auto relative z-20 px-3 md:px-6 lg:px-8">
             <div class="hero-content text-center max-w-2xl mx-auto text-white">
                 <div class="content mb-12">
-                    <p class="text-3xl font-bold"><?php echo $attr['sub_title'] ?></p>
-                    <h3 class="lg:text-7xl text-3xl font-bold lg:mb-6 mb-3"><?php echo $attr['title'] ?></h3>
+                    <p class="text-3xl font-bold font-[Monsterat]"><?php echo $attr['sub_title'] ?></p>
+                    <h3 class="lg:text-7xl text-3xl font-bold lg:mb-6 mb-3 font-[Monsterat]"><?php echo $attr['title'] ?></h3>
                     <p class="lg:text-[16px] text-[14px] mb-3"><?php echo $attr['excerpt'] ?></p>
                 </div>
-                <a href="<?php echo $attr['href'] ?>" class="lg:text-4xl text-xl italic inline-block font-bold lg:px-24 px-12 py-4 lg:py-6 lg:border-4 border-2"><?php esc_html_e("Register now!", "dvutheme") ?></a>
+                <a href="<?php echo $attr['href'] ?>" class="lg:text-4xl text-xl italic inline-block font-bold lg:px-24 px-12 py-4 lg:py-6 lg:border-4 border-2 font-[Monsterat]"><?php esc_html_e("Register now!", "dvutheme") ?></a>
             </div>
         </div>
     </div>

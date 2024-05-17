@@ -7,7 +7,7 @@ $categories =  get_the_category($post->ID);
 
 ?>
 <div class="dvu__single mx-auto container px-3 md:px-6 lg:px-8 py-12 xl:max-w-7xl">
-    <div class="dvu__single-head">
+    <div class="dvu__single-head font-[Monsterat]">
         <?php the_title('<h1 class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] inline-block text-transparent bg-clip-text text-2xl lg:text-4xl font-bold">', '</h1>', true); ?>
         <div class="post-meta flex items-center mb-6">
             <?php single_post_meta(); ?>

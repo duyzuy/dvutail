@@ -15,7 +15,7 @@ function create_sc_cotloi_boxes($atts, $content = null)
 ?>
     <div class="section__content py-12 lg:py-24">
         <div class="container mx-auto px-3 md:px-6 lg:px-8">
-            <div class="section__content-head text-center uppercase mb-16 lg:mb-24">
+            <div class="section__content-head text-center uppercase mb-16 lg:mb-24 font-[Monsterat]">
                 <span class="block mb-2 text-xl lg:text-2xl font-bold text-gray-800"><?php echo $attr['sub_title'] ?></span>
                 <h3 class="bg-gradient-to-tr from-[#3B5AA7] via-[#3D85C5] to-[#3FA9DF] inline-block text-transparent bg-clip-text text-2xl lg:text-4xl uppercase font-bold"><?php echo $attr['title'] ?></h3>
             </div>
