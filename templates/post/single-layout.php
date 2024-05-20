@@ -40,7 +40,6 @@ $categories =  get_the_category($post->ID);
                                 <?php echo $cat->name;  ?>
                             </a>
                         </li>
-
                     <?php $count++;
                     } ?>
                 </ul>
