@@ -17,7 +17,7 @@ function create_sc_home_video_intro($atts, $content = null)
 ?>
     <div class="<?php echo $class; ?>">
         <?php if (wp_is_mobile()) : ?>
-            <img src="<?php echo $attr['thumbnail_url'] ?>" alt="ITEXPO INTRO" />
+            <img src="<?php echo $attr['thumbnail_url'] ?>" alt="ITEXPO INTRO" class="absolute left-0 top-0 w-full h-full object-cover" />
         <?php else : ?>
             <video autoplay="1" id="myVideo" muted loop class="absolute top-0 right-0 w-full h-full object-cover">
                 <source src="<?php echo $attr['video_url']; ?>" type="<?php echo $attr['video_type'] ?>" muted repeat>
