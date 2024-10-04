@@ -1,11 +1,9 @@
 <?php
+
 /**
- * sgsv functions and definitions
+ * dvutail functions and definitions
  *
- * @package sgsv
+ * @package dvutail
  */
 
 require_once get_template_directory() . '/inc/init.php';
-
-
-

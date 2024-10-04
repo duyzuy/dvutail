@@ -15,8 +15,8 @@
 <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?> - <?php bloginfo('description'); ?>" rel="home">
     <figure class="img-holder">
         <picture>
-            <source srcset="<?php echo get_template_directory_uri() . '/assets/images/logo.svg' ?>" media="(max-width: 991px)">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.svg' ?>" alt="logo" class="w-28 lg:w-40">
+            <source srcset="<?php echo get_template_directory_uri() . '/assets/images/logo-saigonhome-original.svg' ?>" media="(max-width: 991px)">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo-saigonhome-original.svg' ?>" alt="logo" class="w-36 md:w-38 lg:w-52">
         </picture>
     </figure>
 </a>

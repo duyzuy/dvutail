@@ -1,217 +1,300 @@
 (function ($) {
-    const slickArrowNext = `<span class="slick-next">
-    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 40 41" fill="none">
-        <g clip-path="url(#clip0_12_15528)">
-        <path d="M20 39.25C30.3553 39.25 38.75 30.8553 38.75 20.5C38.75 10.1447 30.3553 1.75 20 1.75C9.64466 1.75 1.25 10.1447 1.25 20.5C1.25 30.8553 9.64466 39.25 20 39.25Z" stroke="url(#paint0_linear_12_15528)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M12.1875 20.5H27.8125" stroke="url(#paint1_linear_12_15528)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M21.5625 14.25L27.8125 20.5L21.5625 26.75" stroke="url(#paint2_linear_12_15528)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </g>
-        <defs>
-        <linearGradient id="paint0_linear_12_15528" x1="-14.75" y1="11.3752" x2="50.9999" y2="11.3752" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#3B5AA7"/>
-        <stop offset="0.22" stop-color="#3B65AF"/>
-        <stop offset="0.62" stop-color="#3D85C5"/>
-        <stop offset="1" stop-color="#3FA9DF"/>
-        </linearGradient>
-        <linearGradient id="paint1_linear_12_15528" x1="5.52085" y1="20.7567" x2="32.9166" y2="20.7567" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#3B5AA7"/>
-        <stop offset="0.22" stop-color="#3B65AF"/>
-        <stop offset="0.62" stop-color="#3D85C5"/>
-        <stop offset="1" stop-color="#3FA9DF"/>
-        </linearGradient>
-        <linearGradient id="paint2_linear_12_15528" x1="18.8958" y1="17.4584" x2="29.8542" y2="17.4584" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#3B5AA7"/>
-        <stop offset="0.22" stop-color="#3B65AF"/>
-        <stop offset="0.62" stop-color="#3D85C5"/>
-        <stop offset="1" stop-color="#3FA9DF"/>
-        </linearGradient>
-        <clipPath id="clip0_12_15528">
-        <rect width="40" height="40" fill="white" transform="translate(0 0.5)"/>
-        </clipPath>
-        </defs>
-        </svg>
-    </span>`;
+    const homeSwiper = new Swiper(".home__swiper-slider", {
+        // Optional parameters
 
-    const slickArrowPrev = `<span class="slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 40 41" fill="none"><g clip-path="url(#clip0_12_15483)"><path d="M20 1.75C9.64466 1.75 1.25 10.1447 1.25 20.5C1.25 30.8553 9.64466 39.25 20 39.25C30.3553 39.25 38.75 30.8553 38.75 20.5C38.75 10.1447 30.3553 1.75 20 1.75Z" stroke="url(#paint0_linear_12_15483)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M27.8125 20.5L12.1875 20.5" stroke="url(#paint1_linear_12_15483)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.4375 26.75L12.1875 20.5L18.4375 14.25" stroke="url(#paint2_linear_12_15483)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
-    <defs>
-    <linearGradient id="paint0_linear_12_15483" x1="54.75" y1="29.6248" x2="-10.9999" y2="29.6248" gradientUnits="userSpaceOnUse">
-    <stop stop-color="#3B5AA7"/>
-    <stop offset="0.22" stop-color="#3B65AF"/>
-    <stop offset="0.62" stop-color="#3D85C5"/>
-    <stop offset="1" stop-color="#3FA9DF"/>
-    </linearGradient>
-    <linearGradient id="paint1_linear_12_15483" x1="34.4792" y1="20.2433" x2="7.08337" y2="20.2433" gradientUnits="userSpaceOnUse">
-    <stop stop-color="#3B5AA7"/>
-    <stop offset="0.22" stop-color="#3B65AF"/>
-    <stop offset="0.62" stop-color="#3D85C5"/>
-    <stop offset="1" stop-color="#3FA9DF"/>
-    </linearGradient>
-    <linearGradient id="paint2_linear_12_15483" x1="21.1042" y1="23.5416" x2="10.1458" y2="23.5416" gradientUnits="userSpaceOnUse">
-    <stop stop-color="#3B5AA7"/>
-    <stop offset="0.22" stop-color="#3B65AF"/>
-    <stop offset="0.62" stop-color="#3D85C5"/>
-    <stop offset="1" stop-color="#3FA9DF"/>
-    </linearGradient>
-    <clipPath id="clip0_12_15483">
-    <rect width="40" height="40" fill="white" transform="translate(40 40.5) rotate(-180)"/>
-    </clipPath>
-    </defs>
-    </svg></span>`;
-
-    const slickArrowNextWhite = `<span class="slick-next">
-    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
-    <g clip-path="url(#clip0_1_4765)">
-    <path d="M20 39.25C30.3553 39.25 38.75 30.8553 38.75 20.5C38.75 10.1447 30.3553 1.75 20 1.75C9.64466 1.75 1.25 10.1447 1.25 20.5C1.25 30.8553 9.64466 39.25 20 39.25Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M12.1875 20.5H27.8125" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.5625 14.25L27.8125 20.5L21.5625 26.75" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </g><defs><clipPath id="clip0_1_4765"><rect width="40" height="40" fill="white" transform="translate(0 0.5)"/></clipPath></defs></svg></span>`;
-
-    const slickArrowPrevWhite = `<span class="slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <g clip-path="url(#clip0_121_16832)">
-    <path d="M20 1.25C9.64466 1.25 1.25 9.64466 1.25 20C1.25 30.3553 9.64466 38.75 20 38.75C30.3553 38.75 38.75 30.3553 38.75 20C38.75 9.64466 30.3553 1.25 20 1.25Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M27.8125 20L12.1875 20" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.4375 26.25L12.1875 20L18.4375 13.75" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </g><defs><clipPath id="clip0_121_16832"><rect width="40" height="40" fill="white" transform="matrix(-1 0 0 -1 40 40)"/></clipPath></defs></svg></span>`;
-
-    $(".dvu__home-slider").slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        prevArrow:
-            '<span class="slick-prev "><span class="dvu-icon size-16"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg></span></span>',
-        nextArrow:
-            '<span class="slick-next "><span class="dvu-icon size-16"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg></span></span>',
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 24,
         autoplay: true,
-        autoplaySpeed: 8000,
-        dots: true,
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    arrows: false,
-                },
+        pagination: {
+            el: ".home__swiper-slider-pagination",
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            480: {
+                slidesPerView: 1,
+                spaceBetween: 8,
             },
-        ],
-    });
-
-    $(".dvu__slider").slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        prevArrow: slickArrowPrev,
-        nextArrow: slickArrowNext,
-        autoplay: true,
-        autoplaySpeed: 8000,
-        dots: true,
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    arrows: false,
-                },
+            768: {
+                slidesPerView: 2,
             },
-        ],
-    });
-
-    $(".partner__section-slider").slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        infinite: true,
-        prevArrow: slickArrowPrev,
-        nextArrow: slickArrowNext,
-        autoplay: true,
-        arrows: true,
-        autoplaySpeed: 8000,
-        // dots: true,
-        // centerPadding: "150px",
-        // centerMode: true,
-        responsive: [
-            {
-                breakpoint: 1200,
-                settings: {
-                    arrows: false,
-                    centerMode: false,
-                    slidesToShow: 4,
-                },
+            976: {
+                slidesPerView: 3,
             },
-            {
-                breakpoint: 992,
-                settings: {
-                    arrows: false,
-                    centerMode: false,
-                    slidesToShow: 3,
-                },
-            },
-            {
-                breakpoint: 650,
-                settings: {
-                    arrows: false,
-                    centerMode: false,
-                    slidesToShow: 2,
-                },
-            },
-        ],
+        },
     });
 
-    $(".latest__news-slider").slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        prevArrow: slickArrowPrev,
-        nextArrow: slickArrowNext,
-        autoplay: true,
-        arrows: false,
-        autoplaySpeed: 8000,
-        vertical: true,
-        dots: true,
-        // centerPadding: "150px",
-        // centerMode: true,
+    new Swiper(".primary__menu-swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 8,
+        freeMode: true,
+        // autoplay: true,
+        navigation: {
+            nextEl: ".header-swiper-button-next",
+            prevEl: ".header-swiper-button-prev",
+        },
     });
 
-    $(".js__btn-primary-menu-mobile").on("click", function () {
-        $("body").css({ overflow: "hidden" });
-        $(".primary__mobile__menu").addClass("show");
+    new Swiper(".dvutail-product-brand__swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 8,
+        freeMode: true,
+        // autoplay: true,
     });
-    $(".js__close-menu-mobile").on("click", function () {
-        $("body").removeAttr("style");
-        $(".primary__mobile__menu").removeClass("show");
+    new Swiper(".dvutail-product-category__swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 8,
+        freeMode: true,
+        grid: {
+            rows: 2,
+        },
+        // autoplay: true,
     });
 
-    /**shortcode popup content */
-
-    $(".article__report-tab-panel").on(
-        "click",
-        ".article__report-tab",
-        function (e) {
-            const panelContainer = $(this).parents(
-                ".article__report-tab-panel"
-            );
-
-            panelContainer.find(".article__report-tab").removeClass("active");
-            panelContainer.find(".article__report-panel").removeClass("active");
-
-            $(this).addClass("active");
-            const tabId = $(this).data("article-tab");
-            panelContainer
-                .find("[data-article-panel=" + tabId + "]")
-                .addClass("active");
+    var singleProductGalleryThumbnail = new Swiper(
+        ".single-product-gallery-thumbs",
+        {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: "auto",
+            freeMode: true,
+            watchSlidesProgress: true,
+            direction: "vertical",
         }
     );
+    new Swiper(".single-product-gallery__desktop", {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: singleProductGalleryThumbnail,
+        },
+    });
 
-    $(".dvu__report-container").on(
+    new Swiper(".single-product-gallery__mobile", {
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            dynamicBullets: true,
+        },
+    });
+
+    /**
+     * Handle vertical menu Desktop and mobile
+     */
+
+    $(".header__bottom-menu-cat").on(
         "click",
-        ".dvu__report-tab-item",
+        ".js__menu-vertical-button",
         function () {
-            $(".dvu__report-tab-item").removeClass("active");
-            $(this).addClass("active");
-            const tabName = $(this).data("tab");
-            $(this)
-                .parents(".dvu__report-container ")
-                .find(".dvu__report-panel")
-                .removeClass("active");
-            $(this)
-                .parents(".dvu__report-container ")
-                .find("[data-panel=" + tabName + "]")
-                .addClass("active");
+            const menuVerticalContainer = $(this).parents(
+                ".header__bottom-menu-cat"
+            );
+            if (menuVerticalContainer.hasClass("show")) {
+                $("body").removeAttr("style");
+                menuVerticalContainer.removeClass("show");
+            } else {
+                $("body").css({
+                    overflowY: "hidden",
+                    "touch-action": "none",
+                    paddingRight: "15px",
+                });
+                menuVerticalContainer.addClass("show");
+            }
         }
     );
+    $(".vertical__menulist-tabs").on("click", ".menu__tab-item", function () {
+        const tabId = $(this).data("tab-id");
+
+        const panelsWraper = $(this)
+            .parents(".vertical__menulist-items")
+            .find(".vertical__menulist-panels");
+        const tabsWraper = $(this)
+            .parents(".vertical__menulist-items")
+            .find(".vertical__menulist-tabs");
+
+        const panelItems = panelsWraper.find(".vertical__panel-item");
+        const tabItems = tabsWraper.find(".menu__tab-item");
+
+        Object.keys(panelItems).forEach((index) => {
+            $(panelItems[index]).removeClass("active");
+        });
+
+        Object.keys(tabItems).forEach((index) => {
+            $(tabItems[index]).removeClass("active");
+            $(tabItems[index]).removeClass("bg-slate-100");
+        });
+
+        tabsWraper
+            .find("[data-tab-id=" + tabId + "]")
+            .addClass("bg-slate-100 active");
+
+        panelsWraper
+            .find("[data-panel-id=" + tabId + "]")
+            .removeClass("hidden")
+            .addClass("active");
+    });
+
+    /**
+     * hanlde Hamburger mobile menu
+     */
+    const hambugerMenuButton = $(".js__btn-primary-menu-mobile");
+    const closeMobileMenuButton = $(".js__close-menu-mobile");
+    const primaryMobileMenu = $(".menu-primary-mobile");
+
+    primaryMobileMenu.on("click", ".overlay", function () {
+        $("body").removeAttr("style");
+        primaryMobileMenu.removeClass("show");
+    });
+    hambugerMenuButton.on("click", function () {
+        $("body").css({
+            overflowY: "hidden",
+            "touch-action": "none",
+        });
+        primaryMobileMenu.addClass("show");
+    });
+    closeMobileMenuButton.on("click", function () {
+        $("body").removeAttr("style");
+        primaryMobileMenu.removeClass("show");
+    });
+
+    /**
+     * Collapse content single product
+     */
+
+    $(".btn-shorted").on("click", function () {
+        $(this)
+            .parents(".dvu__single-product-description")
+            .toggleClass("h-[220px] overflow-hidden");
+        $(this).parents(".dvu__single-product-expand").hide();
+    });
+
+    $(".quantity").each(function () {
+        var spinner = $(this),
+            input = spinner.find('input[type="number"]'),
+            btnUp = spinner.find(".quantity-up"),
+            btnDown = spinner.find(".quantity-down"),
+            min = input.attr("min"),
+            max = input.attr("max");
+
+        btnUp.click(function () {
+            var oldValue = parseFloat(input.val());
+            if (max && oldValue >= max) {
+                var newVal = oldValue;
+            } else {
+                var newVal = oldValue + 1;
+            }
+            spinner.find("input").val(newVal);
+            spinner.find("input").trigger("change");
+        });
+
+        btnDown.click(function () {
+            var oldValue = parseFloat(input.val());
+            if (oldValue <= min) {
+                var newVal = oldValue;
+            } else {
+                var newVal = oldValue - 1;
+            }
+            spinner.find("input").val(newVal);
+            spinner.find("input").trigger("change");
+        });
+    });
+
+    /**
+     * Handle sticky header
+     */
+    const headerMain = document.getElementById("main-header");
+    const headerHeight = headerMain.offsetHeight;
+    const DIRECTION_TYPE = {
+        UP: "up",
+        DOWN: "down",
+    };
+    let scrollYPosition = 0;
+    let scrollHeightStart = 0;
+    let startOfPosition = 0;
+    let direction = "up";
+
+    window.addEventListener("scroll", function (ev) {
+        if (!headerHeight) return;
+        if (this.innerWidth > 760) return;
+
+        const pageScrollY = this.scrollY;
+
+        if (pageScrollY > scrollYPosition) {
+            if (direction !== DIRECTION_TYPE.DOWN) {
+                scrollHeightStart = 0;
+                startOfPosition = pageScrollY;
+            }
+            if (pageScrollY - startOfPosition > headerHeight) {
+                headerMain.classList.add("sticky");
+                headerMain.classList.add("top-0");
+            }
+            scrollHeightStart = pageScrollY;
+            direction = DIRECTION_TYPE.DOWN;
+        }
+
+        if (pageScrollY < scrollYPosition) {
+            if (direction !== DIRECTION_TYPE.UP) {
+                scrollHeightStart = 0;
+                startOfPosition = pageScrollY;
+            }
+            if (startOfPosition - pageScrollY > headerHeight) {
+                headerMain.classList.remove("sticky");
+                headerMain.classList.remove("top-0");
+            }
+
+            scrollHeightStart = pageScrollY;
+            direction = DIRECTION_TYPE.UP;
+        }
+
+        scrollYPosition = pageScrollY;
+    });
 })(jQuery);
+
+(async function () {
+    /**
+     *
+     * pwa
+     */
+    const standalone = window.matchMedia("(display-mode: standalone)").matches;
+
+    window.addEventListener("DOMContentLoaded", () => {
+        window
+            .matchMedia("(display-mode: standalone)")
+            .addEventListener("change", (evt) => {
+                let displayMode = "browser";
+                if (evt.matches) {
+                    displayMode = "standalone";
+                }
+                // Log display mode change to analytics
+                console.log("DISPLAY_MODE_CHANGED", displayMode);
+            });
+    });
+
+    const UA = navigator.userAgent;
+    const IOS = UA.match(/iPhone|iPad|iPod/);
+    const ANDROID = UA.match(/Android/);
+
+    const PLATFORM = IOS ? "ios" : ANDROID ? "android" : "unknown";
+
+    const INSTALLED = !!(standalone || (IOS && !UA.match(/Safari/)));
+
+    const isMobile = IOS || ANDROID;
+
+    if (isMobile) {
+        const installed = await getInstalledRelatedApp();
+        console.log(installed);
+        console.log(PLATFORM, INSTALLED);
+    }
+})(jQuery);
+
+async function getInstalledRelatedApp() {
+    return await window.navigator.getInstalledRelatedApps();
+}

@@ -17,7 +17,7 @@ $author_nicename = get_the_author_meta('user_nicename', $post->post_author);
                         <path d="M6.60759 3.96407V2.20227M14.5357 3.96407V2.20227M6.60759 7.48768H14.5357M3.96489 18.0585H17.1784C17.6649 18.0585 18.0593 17.6641 18.0593 17.1776V4.84498C18.0593 4.35847 17.6649 3.96407 17.1784 3.96407H3.96489C3.47838 3.96407 3.08398 4.35847 3.08398 4.84498V17.1776C3.08398 17.6641 3.47838 18.0585 3.96489 18.0585Z" stroke="#ffffff" stroke-width="1.58562" stroke-linecap="round"></path>
                     </svg>
                 </span>
-                <span><time datetime="<?php echo get_the_date('j/M/Y'); ?>" itemprop="datePublished"><?php echo get_the_date($date_format) ?></time></span>
+                <span><time datetime="<?php echo get_the_date('j/M/Y'); ?>" itemprop="datePublished"><?php echo get_the_date('l, j F, Y') ?></time></span>
             </span>
             <span class="author inline-flex items-center">
                 <span class="mr-1">

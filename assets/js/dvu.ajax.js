@@ -9,87 +9,105 @@
         }
     }
 
-    matcharray = Array(
-        [8, 9, 17],
-        [4, 5, 9],
-        [6, 2, 8],
-        [3, 7, 10],
-        [11, 8, 19],
-        [21, 9, 30]
-    );
-
-    /*=====contact===*/
-    $("form#sgh_contact").on("submit", function (e) {
+    /*================================contact=======================================*/
+    $("form#dvutail-form-contact").on("submit", function (e) {
         e.preventDefault();
-        var self = $(this);
-        var name, email, phone, mess, submitbtn, notice;
-        name = self.find('input[name="yourname"]');
-        email = self.find('input[name="youremail"]');
-        phone = self.find('input[name="yourphone"]');
-        mess = self.find("textarea");
-        submitbtn = self.find('input[name="submit"]');
-        notice = self.find("p.notice");
+        const _this = $(this);
 
-        if (name.val() == "") {
-            name.addClass("is-invalid");
-            name.next()
-                .addClass("invalid-feedback")
+        const contactName = _this.find('input[name="contact_name"]');
+        const contactEmail = _this.find('input[name="contact_email"]');
+        const contactPhone = _this.find('input[name="contact_phone"]');
+        const contactMessage = _this.find("textarea");
+        const submitButton = _this.find('button[type="submit"]');
+        const notice = $(".dutail-contact-form__notice");
+
+        console.log(notice);
+        if (contactName.val() == "") {
+            contactName.addClass("border-red-500");
+            contactName
+                .next()
+                .addClass("text-red-500 text-sm")
                 .html("Vui lòng điền họ và tên");
             return;
-        }
-        if (name.val().length > 30) {
-            name.addClass("is-invalid");
-            name.next().addClass("invalid-feedback").html("Họ tên quá dài");
-            return;
-        }
-        if (email.val() == "") {
-            email.addClass("is-invalid");
-            email
+        } else if (contactName.val().length > 30) {
+            contactName.addClass("border-red-500");
+            contactName
                 .next()
-                .addClass("invalid-feedback")
-                .html("Xin hãy nhập địa chỉ emaail");
+                .addClass("text-red-500 text-sm")
+                .html("Họ tên quá dài");
             return;
+        } else {
+            contactName.removeClass("border-red-500");
+            contactName.next().removeClass("text-red-500 text-sm").html("");
         }
-        if (phone.val() == "") {
-            phone.addClass("is-invalid");
-            phone
+
+        if (contactPhone.val() == "") {
+            contactPhone.addClass("border-red-500");
+            contactPhone
                 .next()
-                .addClass("invalid-feedback")
+                .addClass("text-red-500 text-sm")
                 .html("xin hãy nhập số điện thoại");
             return;
-        }
-        if (validatePhone(phone.val()) == false) {
-            phone.addClass("is-invalid");
-            phone
+        } else if (validatePhone(contactPhone.val()) == false) {
+            contactPhone.addClass("border-red-500");
+            contactPhone
                 .next()
-                .addClass("invalid-feedback")
+                .addClass("text-red-500 text-sm")
                 .html("nhập lại số điện thoại");
             return;
+        } else {
+            contactPhone.removeClass("border-red-500");
+            contactPhone.next().removeClass("text-red-500 text-sm").html("");
         }
+
+        if (contactEmail.val() == "") {
+            contactEmail.addClass("border-red-500");
+            contactEmail
+                .next()
+                .addClass("text-red-500 text-sm")
+                .html("Xin hãy nhập địa chỉ emaail");
+            return;
+        } else {
+            contactEmail.removeClass("border-red-500");
+            contactEmail.next().removeClass("text-red-500 text-sm").html("");
+        }
+
+        contactName.attr("disabled", "disabled");
+        contactEmail.attr("disabled", "disabled");
+        contactPhone.attr("disabled", "disabled");
+        submitButton.attr("disabled", "disabled");
+        contactMessage.attr("disabled", "disabled");
+
         $.ajax({
             type: "POST",
             // dataType: 'json',
-            url: neo_object.ajaxurl,
+            url: dvutail_ajax_object.ajaxurl,
             data: {
-                name: name.val(),
-                email: email.val(),
-                phone: phone.val(),
-                mess: mess.val(),
-                nonce: neo_object.wpnonce,
-                action: "sghsend_contact_action",
+                name: contactName.val(),
+                email: contactEmail.val(),
+                phone: contactPhone.val(),
+                mess: contactMessage.val(),
+                nonce: dvutail_ajax_object.wpnonce,
+                action: "dvutail_send_contact_action",
             },
             success: function (response) {
-                var data = jQuery.parseJSON(response);
-                notice.addClass("success");
+                const data = jQuery.parseJSON(response);
+                console.log(data);
+                notice.addClass("text-green-600");
                 notice.html(
-                    'Cảm ơn Anh/Chị: <span style="color: #dc3545">' +
-                        data.name +
-                        "</span> Đã gửi liên hệ cho chúng tôi, chúng tôi sẽ liên hệ lại với anh chị sớm nhất có thể"
+                    `Cảm ơn Anh/Chị: <strong>${data.name}</strong> đã gửi liên hệ, chúng tôi sẽ liên hệ lại với anh chị sớm nhất có thể.`
                 );
-                name.attr("disabled", "disabled");
-                email.attr("disabled", "disabled");
-                phone.attr("disabled", "disabled");
-                submitbtn.attr("disabled", "disabled");
+
+                contactName.removeAttr("disabled");
+                contactEmail.removeAttr("disabled");
+                contactPhone.removeAttr("disabled");
+                contactMessage.removeAttr("disabled");
+                submitButton.removeAttr("disabled");
+
+                contactName.val("");
+                contactEmail.val("");
+                contactPhone.val("");
+                contactMessage.val("");
             },
             error: function () {
                 console.log(
@@ -118,10 +136,10 @@
                 $.ajax({
                     type: "POST",
                     // dataType: 'json',
-                    url: neo_object.ajaxurl,
+                    url: dvutail_ajax_object.ajaxurl,
                     data: {
                         string: value,
-                        nonce: neo_object.wpnonce,
+                        nonce: dvutail_ajax_object.wpnonce,
                         action: "neo_autocomplate_action",
                     },
                     success: function (response) {
@@ -151,137 +169,5 @@
                 $(".live__search-result").hide();
             }
         }
-    });
-
-    /**==============search activity=================== */
-
-    const createArticleTemplate = function ({
-        day,
-        month,
-        year,
-        title,
-        href,
-        thumbnail,
-        locationType,
-        timming,
-        excerpt,
-    }) {
-        return `
-       <article class="w-full border-b pb-6 mb-6">
-           <div class="inner flex flex-wrap lg:items-center">
-               <div class="activity-date lg:w-60 w-40 lg:pr-8 pr-3">
-                   <span class="inline-flex items-center bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] text-transparent bg-clip-text uppercase font-bold">
-                       <span class="lg:text-6xl text-4xl">${day}</span>
-                       <span class="ml-2 leading-none">
-                           <span class="lg:text-lg text-sm block">${month}</span>
-                           <span class="lg:text-3xl text-lg block">${year}</span>
-                       </span>
-                   </span>
-               </div>
-               <div class="flex flex-1 flex-wrap gap-y-6">
-                   <div class="activity-thumbnail w-full lg:w-1/4 pr-8">
-                       <a href="${href}" alt="${title}">
-                         <img src="${thumbnail}" class="w-full" />
-                       </a>
-                   </div>
-                   <div class="activity-content w-full lg:w-3/4">
-                       <div class="header-box">
-                           <h3 class="">
-                               <a href="${href}" class="bg-gradient-to-tr from-[#CC2027] via-[#EB7121] to-[#F48820] text-transparent bg-clip-text uppercase font-bold text-xl lg:text-2xl mb-3" alt="<?php the_title() ?>">${title}</a>
-                           </h3>
-                           <div class="mb-3 line-clamp-3">${excerpt}</div>
-                           <div class="flex">
-                               <span class="icon mr-3 mt-[2px]">
-                                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 25" fill="none">
-                                       <g clip-path="url(#clip0_1_4893)">
-                                           <path d="M3.96938 13.2401C3.82899 13.0995 3.75009 12.909 3.75 12.7104V4.02069H12.4397C12.6383 4.02078 12.8288 4.09968 12.9694 4.24007L22.2806 13.5513C22.4212 13.692 22.5001 13.8826 22.5001 14.0815C22.5001 14.2803 22.4212 14.471 22.2806 14.6116L14.3438 22.5513C14.2031 22.6919 14.0124 22.7708 13.8136 22.7708C13.6148 22.7708 13.4241 22.6919 13.2834 22.5513L3.96938 13.2401Z" stroke="url(#paint0_linear_1_4893)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                           <path d="M7.875 9.27069C8.49632 9.27069 9 8.76701 9 8.14569C9 7.52437 8.49632 7.02069 7.875 7.02069C7.25368 7.02069 6.75 7.52437 6.75 8.14569C6.75 8.76701 7.25368 9.27069 7.875 9.27069Z" fill="url(#paint1_linear_1_4893)" />
-                                       </g>
-                                       <defs>
-                                           <linearGradient id="paint0_linear_1_4893" x1="-3.39756" y1="18.8807" x2="-3.39756" y2="4.19183" gradientUnits="userSpaceOnUse">
-                                               <stop stop-color="#3B5AA7" />
-                                               <stop offset="0.22" stop-color="#3B65AF" />
-                                               <stop offset="0.62" stop-color="#3D85C5" />
-                                               <stop offset="1" stop-color="#3FA9DF" />
-                                           </linearGradient>
-                                           <linearGradient id="paint1_linear_1_4893" x1="5.8923" y1="8.80388" x2="5.8923" y2="7.04123" gradientUnits="userSpaceOnUse">
-                                               <stop stop-color="#3B5AA7" />
-                                               <stop offset="0.22" stop-color="#3B65AF" />
-                                               <stop offset="0.62" stop-color="#3D85C5" />
-                                               <stop offset="1" stop-color="#3FA9DF" />
-                                           </linearGradient>
-                                           <clipPath id="clip0_1_4893">
-                                               <rect width="24" height="24" fill="white" transform="translate(0 0.270691)" />
-                                           </clipPath>
-                                       </defs>
-                                   </svg>
-                               </span>
-                               <p class="pl">${locationType}, ${timming}</p>
-                           </div>
-                       </div>
-       
-                   </div>
-               </div>
-           </div>
-       </article>`;
-    };
-
-    $("#activity_post_search_form").on("submit", function (e) {
-        e.preventDefault();
-        const self = $(this);
-
-        const onsite = self.find('input[name="onsite"]');
-        const offsite = self.find('input[name="offsite"]');
-        const beforeEv = self.find('input[name="before_event"]');
-
-        const inEv = self.find('input[name="in_event"]');
-        const afterEv = self.find('input[name="after_event"]');
-        const startDate = self.find('input[name="date_start"]');
-        const endDate = self.find('input[name="date_end"]');
-
-        const term_name = self.find('input[name="term_name"]');
-        const termId = self.find('input[name="term_id"]');
-        const taxonomy = self.find('input[name="taxonomy"]');
-
-        const activityListContainer = $(".activity__list-container");
-
-        const submitbtn = self.find('button[type="submit"]');
-        const buttonText = submitbtn.text();
-        submitbtn.text("...Loading");
-        submitbtn.attr("disabled", "disabled");
-
-        $.ajax({
-            type: "POST",
-            // dataType: 'json',
-            url: neo_object.ajaxurl,
-            data: {
-                onsite: onsite.is(":checked"),
-                offsite: offsite.is(":checked"),
-                beforeEv: beforeEv.is(":checked"),
-                term_id: termId.val(),
-                taxonomy: taxonomy.val(),
-                inEv: inEv.is(":checked"),
-                afterEv: afterEv.is(":checked"),
-                startDate: startDate.val(),
-                endDate: endDate.val(),
-                nonce: neo_object.wpnonce,
-                action: "dvu_filter_activity_post",
-            },
-            success: function (response) {
-                const data = JSON.parse(response);
-
-                activityListContainer.html("");
-
-                submitbtn.text(buttonText);
-                submitbtn.removeAttr("disabled");
-                data.forEach((article) => {
-                    template = createArticleTemplate(article);
-                    activityListContainer.append(template);
-                });
-            },
-            error: function (err) {
-                console.log(err);
-            },
-        });
     });
 })(jQuery);

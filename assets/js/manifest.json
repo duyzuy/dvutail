@@ -1,22 +1,66 @@
 {
-    "short_name": "ITECH EXPO",
-    "name": "ITECH EXPO",
-    "description": "ITECH EXPO",
+    "short_name": "SAI GON HOME KITCHEN",
+    "name": "SAI GON HOME KITCHEN",
+    "description": "SAI GON HOME KITCHEN",
+    "display": "standalone",
+    "display_override": ["fullscreen", "minimal-ui"],
     "icons": [
         {
-            "src": "../icons/itech-192x192.png",
+            "src": "../icons/favicon-48x48.png",
+            "type": "image/png",
+            "sizes": "48x48"
+        },
+        {
+            "src": "../icons/favicon-96x96.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "../icons/favicon-128x128.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "../icons/favicon-144x144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "../icons/favicon-192x192.png",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "../icons/itech-192x192.png",
+            "src": "../icons/favicon-512x512.png",
             "type": "image/png",
             "sizes": "512x512"
         }
     ],
+    "screenshots": [
+        {
+            "src": "../images/screenshot-1200x900.png",
+            "sizes": "1200x900",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Thiết bị nhà bếp Sài Gòn"
+        },
+        {
+            "src": "../images/screenshot-600x450.png",
+            "sizes": "600x450",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Thiết bị nhà bếp Sài Gòn"
+        }
+    ],
     "start_url": "/",
+    "default_locale": "vi",
     "background_color": "#ffffff",
-    "display": "standalone",
     "scope": "/",
-    "theme_color": "#F48820"
+    "theme_color": "#facc15",
+    "related_applications": [
+        {
+            "platform": "webapp",
+            "url": "https://saigonhomekitchen.vn/wp-content/themes/dvutail/assets/js/manifest.json"
+        }
+    ]
 }

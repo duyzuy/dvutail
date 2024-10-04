@@ -6,6 +6,7 @@
 }
 
 .wp-block-image {
+    margin-bottom: 15px;
 }
 .aligncenter {
     text-align: center;
@@ -15,7 +16,25 @@
     margin-right: auto;
 }
 .wp-block-heading {
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 .has-text-align-center {
     text-align: center;
+}
+blockquote {
+    position: relative;
+    padding-left: 20px;
+}
+blockquote:after {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: 0px;
+    font-size: 40px;
+    line-height: 1;
+    color: #f1f1f1;
+}
+.dvutail-single-post__body blockquote > p {
+    margin-bottom: 0;
 }
